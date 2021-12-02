@@ -1,0 +1,10 @@
+apiVersion: servicenetworking.cnrm.cloud.google.com/v1beta1
+kind: ServiceNetworkingConnection
+metadata:
+  name: project-id-servicenetworkingconnection # kpt-set: ${project-id}-servicenetworkingconnection
+spec:
+  networkRef:
+    name: vpc-privateserviceaccess
+  reservedPeeringRanges:
+    - name: address-privateserviceaccess
+  service: servicenetworking.googleapis.com

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: setters
+data:
+  dbname: inquiry-db
+  database-version: MYSQL_5_7
+  region: asia-northeast1
+  tier: db-f1-micro

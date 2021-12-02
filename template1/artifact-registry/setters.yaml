@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: setters
+data:
+  repo-name: docker-repository
+  repo-location: asia-northeast1
+  repo-description: "Docker repository for the application"

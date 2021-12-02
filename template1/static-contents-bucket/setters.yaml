@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: setters
+data:
+  bucket-location: asia-northeast1
+  enable-versioning: "true"
+  uniform-bucket-level-access: "true"
+  storage-class: "standard"
