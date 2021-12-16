@@ -1,0 +1,8 @@
+apiVersion: artifactregistry.cnrm.cloud.google.com/v1beta1
+kind: ArtifactRegistryRepository
+metadata:
+  name: docker-repository # kpt-set: ${repo-name}
+spec:
+  format: DOCKER
+  location: asia-northeast1 # kpt-set: ${repo-location}
+  description: "Docker repository for the application" # kpt-set: ${repo-description}

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: setters
+data:
+  project-id: test-project
+  cluster-location: asia-northeast1
+  cluster-name: containercluster-sample-vpcnative
+  initial-node-count: "1"
+  default-max-pods-per-node: "16"
+  network-name: containercluster-vpcnative-network
+  subnetwork-name: containercluster-vpcnative-subnetwork

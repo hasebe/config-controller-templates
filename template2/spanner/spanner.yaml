@@ -1,0 +1,8 @@
+apiVersion: spanner.cnrm.cloud.google.com/v1beta1
+kind: SpannerInstance
+metadata:
+  name: spannerinstance-sample # kpt-set: ${instance-name}
+spec:
+  config: regional-asia-northeast1 # kpt-set: ${instance-config}
+  displayName: Spanner Instance Sample
+  numNodes: 2 # kpt-set: ${node-count}

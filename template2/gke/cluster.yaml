@@ -1,0 +1,48 @@
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  labels:
+    availability: high
+    target-audience: production
+  name: containercluster-sample-vpcnative # kpt-set: ${cluster-name}
+spec:
+  description: A large regional VPC-native cluster set up with special networking considerations.
+  location: asia-northeast1 # kpt-set: ${cluster-location}
+  initialNodeCount: 1 # kpt-set: ${initial-node-count}
+  defaultMaxPodsPerNode: 16 # kpt-set: ${default-max-pods-per-node}
+  workloadIdentityConfig:
+    workloadPool: project-id.svc.id.goog # kpt-set: ${project-id}.svc.id.goog
+  networkingMode: VPC_NATIVE
+  networkRef:
+    name: containercluster-vpcnative-network # kpt-set: ${network-name}
+  subnetworkRef:
+    name: containercluster-vpcnative-subnetwork # kpt-set: ${subnetwork-name}
+  ipAllocationPolicy:
+    servicesSecondaryRangeName: servicesrange
+    clusterSecondaryRangeName: clusterrange
+  clusterAutoscaling:
+    enabled: true
+    autoscalingProfile: BALANCED
+    resourceLimits:
+    - resourceType: cpu
+      maximum: 100
+      minimum: 10
+    - resourceType: memory
+      maximum: 1000
+      minimum: 100
+  maintenancePolicy:
+    dailyMaintenanceWindow:
+      startTime: 00:00
+  releaseChannel:
+    channel: STABLE
+  enableBinaryAuthorization: true
+  enableIntranodeVisibility: true
+  addonsConfig:
+    networkPolicyConfig:
+      disabled: false
+    dnsCacheConfig:
+      enabled: true
+  networkPolicy:
+    enabled: true
+  verticalPodAutoscaling:
+    enabled: true

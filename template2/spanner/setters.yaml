@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: setters
+data:
+  project-id: test-project
+  instance-name: spannerinstance-sample
+  instance-config: regional-asia-northeast1
+  node-count: "2"

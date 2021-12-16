@@ -1,0 +1,8 @@
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeHealthCheck
+metadata:
+  name: compute-healthcheck # kpt-set: ${healthcheck-name}
+spec:
+  httpHealthCheck:
+    port: 80
+  location: global

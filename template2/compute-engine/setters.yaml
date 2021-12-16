@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: setters
+data:
+  project-id: test-project
+  compute-location: asia-northeast1
+  instance-template-name: compute-instance-template
+  instance-group-manager-name: compute-instancegroupmanager
+  network-name: compute-network
+  subnetwork-name: compute-subnetwork
+  healthcheck-name: compute-healthcheck
