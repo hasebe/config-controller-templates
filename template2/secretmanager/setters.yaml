@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: setters
+data:
+  project-id: test-project
+  secret-manager-secret-name: test-secret
